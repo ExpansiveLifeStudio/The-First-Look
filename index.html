@@ -376,15 +376,7 @@
       <p class="subscribe-copy" style="margin-bottom:14px;">
         Get occasional notes and resources from Tina.
       </p>
-      <form class="subscribe-form" id="subscribe-form" onsubmit="return subscribe(event)">
-        <div class="email-field">
-          <input type="email" required placeholder="your email address" id="email-input" />
-        </div>
-        <button type="submit" class="btn-ghost">Subscribe</button>
-      </form>
-      <p class="subscribed-msg" id="subscribed-msg" style="display:none;">
-        You're on the list. With warmth — Tina.
-      </p>
+      <script async data-uid="c6c0174713" src="https://tina-prentiss-well-being.kit.com/c6c0174713/index.js"></script>
     </div>
   </section>
 
@@ -511,33 +503,6 @@
     }, 400);
   }
 
-  const KIT_FORM_ID = "9702581";
-  const KIT_API_KEY = "xCbHe7nFPOL37iwzEvbAYg";
-
-  async function subscribe(e){
-    e.preventDefault();
-    const email = document.getElementById('email-input').value.trim();
-    const submitBtn = e.target.querySelector('button[type="submit"]');
-    if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = "Subscribing..."; }
-
-    try{
-      const res = await fetch(`https://api.convertkit.com/v3/forms/${KIT_FORM_ID}/subscribe`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ api_key: KIT_API_KEY, email: email }),
-      });
-      if(!res.ok) throw new Error("Kit responded with an error");
-    } catch(err){
-      console.error("Kit subscribe failed:", err);
-      if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = "Subscribe"; }
-      alert("Something went wrong subscribing — please try again in a moment.");
-      return false;
-    }
-
-    document.getElementById('subscribe-form').style.display = 'none';
-    document.getElementById('subscribed-msg').style.display = 'block';
-    return false;
-  }
 
   function restart(){
     selected = [];
