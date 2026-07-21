@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're In — Expansive Life Studio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --cream:#FAF6EF;
+    --paper:#FFFEFB;
+    --ink:#2B2420;
+    --ink-soft:#6B6058;
+    --plum:#4A2545;
+    --plum-soft:#8B6690;
+    --gold:#A9823D;
+    --gold-pale:#EFE2C6;
+    --line:#E2D8C8;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{
+    margin:0;padding:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Newsreader',serif;
+    min-height:100%;
+  }
+  .root{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 24px;
+  }
+  .card{
+    max-width:520px;
+    text-align:center;
+    animation:fadeIn .7s ease;
+  }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);} }
+
+  .mark{
+    width:56px;
+    height:2px;
+    background:var(--gold);
+    margin:0 auto 28px;
+    position:relative;
+  }
+  .mark::before, .mark::after{
+    content:'';
+    position:absolute;
+    top:-3px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--plum);
+  }
+  .mark::before{ left:-4px; }
+  .mark::after{ right:-4px; }
+
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(32px,6vw,44px);
+    line-height:1.1;
+    color:var(--plum);
+    margin:0 0 20px;
+  }
+  p{
+    font-size:18px;
+    line-height:1.7;
+    color:var(--ink);
+    margin:0 0 16px;
+  }
+  .soft{
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  .rule{
+    height:1px;
+    background:var(--line);
+    margin:32px auto;
+    width:80px;
+  }
+  .links{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+  a.btn{
+    font-family:'Inter',sans-serif;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    padding:12px 22px;
+    border-radius:3px;
+    transition:all .15s ease;
+  }
+  a.btn-primary{
+    background:var(--plum);
+    color:#FBF6EE;
+  }
+  a.btn-primary:hover{ background:#5c2e5f; }
+  a.btn-ghost{
+    background:transparent;
+    color:var(--plum);
+    border:1px solid var(--line);
+  }
+  a.btn-ghost:hover{ border-color:var(--plum-soft); background:#F3EBEF; }
+
+  .signature{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    color:var(--plum-soft);
+    margin-top:36px;
+    font-size:15px;
+  }
+
+  @media (max-width:480px){
+    h1{ font-size:30px; }
+    p{ font-size:16.5px; }
+    .links{ flex-direction:column; align-items:center; }
+  }
+</style>
+</head>
+<body>
+  <div class="root">
+    <div class="card">
+      <div class="mark" aria-hidden="true"></div>
+      <p class="eyebrow">Expansive Life Studio with Tina Prentiss</p>
+      <h1>You're in.</h1>
+      <p>Thank you for signing up.</p>
+    </div>
+  </div>
+</body>
+</html>
